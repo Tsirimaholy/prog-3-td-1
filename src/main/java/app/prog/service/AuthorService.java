@@ -4,6 +4,8 @@ import app.prog.model.Author;
 import app.prog.model.exception.NotFoundException;
 import app.prog.repository.AuthorRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +17,9 @@ public class AuthorService {
     private final AuthorRepository repository;
 
     public List<Author> getAuthors() {
-        return repository.findAll();
+        Pageable pageable = PageRequest.of(0, 5);
+        return repository.findByOrderByBirthDateAsc(pageable);
+//        return repository.findAll();
     }
 
     public List<Author> createAuthors(List<Author> toCreate) {
