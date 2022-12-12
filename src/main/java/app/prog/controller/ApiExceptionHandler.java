@@ -1,4 +1,4 @@
-package app.prog.service;
+package app.prog.controller;
 
 import app.prog.model.exception.ApiException;
 import app.prog.model.exception.NotFoundException;
