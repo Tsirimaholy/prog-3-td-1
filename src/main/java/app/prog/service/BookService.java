@@ -37,7 +37,7 @@ public class BookService {
 
         T is the type of the value, for example : here the class type is BookEntity
          */
-        Optional<BookEntity> optional = repository.findById(String.valueOf(BookEntityId));
+        Optional<BookEntity> optional = repository.findById(BookEntityId);
         if (optional.isPresent()) {
             repository.delete(optional.get());
             return optional.get();
