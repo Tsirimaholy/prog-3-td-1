@@ -27,6 +27,7 @@ public class BookService {
     }
 
     //TODO-3: should I use Integer here or int ? Why ?
+    // you should use 'int' as it is a required params, this value should not be nullable
     public BookEntity deleteBook(int BookEntityId) {
         /*
         TIPS: From the API, the Class Optional<T> is :
