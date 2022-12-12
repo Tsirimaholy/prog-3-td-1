@@ -14,19 +14,19 @@ import java.util.Optional;
 public class AuthorService {
     private final AuthorRepository repository;
 
-    public List<Author> getBooks() {
+    public List<Author> getAuthors() {
         return repository.findAll();
     }
 
-    public List<Author> createBooks(List<Author> toCreate) {
+    public List<Author> createAuthors(List<Author> toCreate) {
         return repository.saveAll(toCreate);
     }
 
-    public List<Author> updateBooks(List<Author> toUpdate) {
+    public List<Author> updateAuthors(List<Author> toUpdate) {
         return repository.saveAll(toUpdate);
     }
 
-    public Author deleteBook(int AuthorId) {
+    public Author deleteAuthor(int AuthorId) {
         /*
         TIPS: From the API, the Class Optional<T> is :
         A container object which may or may not contain a non-null value.
@@ -40,7 +40,7 @@ public class AuthorService {
             repository.delete(optional.get());
             return optional.get();
         } else {
-            throw new NotFoundException("BookEntity." + AuthorId+ " not found");
+            throw new NotFoundException("Author " + AuthorId+ " not found");
         }
     }
 }
